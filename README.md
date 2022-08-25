@@ -1,5 +1,15 @@
 # Spring Demo Examples
-  The project is divided into the following branches:
+  This is Spring Boot master branch wich contian
+    blank project for cloning and set up.
+    Project created as a guide and demo for learning purposes.
+    
+    * Who can use it?
+    These examples are useful both for beginners with no previous experience
+    with Spring and for individuals who good knowlgde of Spring Boot.
+    However, Java programing basic knowldge needed.
+    Instructors may use these examples for teaching purposes.
+    
+    The project is divided into the following branches:
     
     1) Spring MVC and Timeleaf
     2) Spring Date and Spring MVC
