@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Template</title>
+</head>
+<body>
+    <!-- the string from controller passed to html
+     as 'message' attribute
+     Thymeleaf use "${}" to notify spring that
+     'message' variable expected-->
+
+    <h1></h1><p th:text="${message}"></p></h1>
+</body>
+</html>

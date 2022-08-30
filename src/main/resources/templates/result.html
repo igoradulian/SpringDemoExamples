@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Employee Successful Saved</title>
+</head>
+<body>
+<h1>Employee Successfully Saved</h1>
+<div class="show-data">
+    <h1>Employee Data</h1>
+        <label>First Name</label>
+        <p th:text="${employee.getFirstName()}"></p>
+    <br>
+        <label>Last Name</label>
+        <p th:text="${employee.getLastName()}"></p>
+    <br>
+        <label>Email</label>
+        <p th:text="${employee.getEmail()}"></p>
+</div>
+<br>
+<br>
+<a href="#" th:href="@{/all-employees}">List All Employees</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style type="text/css">
+        .container {
+            margin: 100px;
+        }
+    </style>
+    <title>Basic Thymeleaf Form</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add employee</h1>
+    <form action="#" th:action="@{/process-employee}" th:object="${employee}" method="post">
+        <label>First Name</label>
+        <input type="text" th:field="*{firstName}">
+        <br>
+        <label>Last Name</label>
+        <input type="text" th:field="*{lastName}">
+        <br>
+        <label>Email</label>
+        <input type="text" th:field="*{email}">
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+</div>
+</body>
+</html>
