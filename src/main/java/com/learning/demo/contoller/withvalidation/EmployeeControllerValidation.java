@@ -1,12 +1,16 @@
-package com.learning.demo.contoller;
-import com.learning.demo.model.Employee;
+package com.learning.demo.contoller.withvalidation;
+
+import com.learning.demo.model.validation.lombok.Employee;
 import com.learning.demo.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -17,15 +21,17 @@ import java.util.List;
 /**
  * EmployeeController implements
  * basic business logic by adding
- * and reading from database
- * employee data
+ * and reading employee data
+ * from database
+ *
  */
 @Controller
-public class EmployeeController {
+@RequestMapping("/validation")
+public class EmployeeControllerValidation {
 
     private EmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeControllerValidation(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -44,31 +50,33 @@ public class EmployeeController {
     {
         model.addAttribute("employee", new Employee());
 
-        return "form-example";
+        return "form-validation-example";
     }
 
 
     /**
      * Using ModelAtribute
+     * and @valid annotation to
+     * get determine violation
+     * of constraints
      * @param employee
      * @return
      */
+
+    /*
+    This is very simple example for learning purposes
+    Usually this type of validation used to ensure
+     */
     @PostMapping("/process-employee")
-    public String processEmployee(@ModelAttribute ("employee")Employee employee)
+    public String processEmployee(@Valid @ModelAttribute ("employee")Employee employee,
+                                  BindingResult bindingResult)
     {
-        System.out.println(employee.getFirstName());
-        employeeService.addEmployee(employee);
+        if(bindingResult.hasErrors())
+        {
+            return "form-validation-example";
+        }
 
         return "result";
-    }
-
-    @GetMapping("/all-employees")
-    public String getAllEmployees(Model model)
-    {
-        List<Employee> employeeList = employeeService.getAllEmployees();
-        model.addAttribute("employees", employeeList);
-
-        return "employees";
     }
 
 }
