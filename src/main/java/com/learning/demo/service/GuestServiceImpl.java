@@ -35,7 +35,10 @@ public class GuestServiceImpl implements GuestService{
 
     @Override
     public void createGuest(Guest guest) {
-        guestRepository.findById(guest.getId()).orElse(guestRepository.save(guest));
+       if(guestRepository.findGuestByPhoneNumber(guest.getPhoneNumber()) == null )
+           guestRepository.save(guest);
+       else
+           throw new RuntimeException("Guest already exist");
 
     }
 
@@ -60,5 +63,10 @@ public class GuestServiceImpl implements GuestService{
     @Override
     public Iterable<Guest> getAllGuests() {
         return guestRepository.findAll();
+    }
+
+    @Override
+    public Guest findByPhone(String phone) {
+        return guestRepository.findGuestByPhoneNumber(phone);
     }
 }

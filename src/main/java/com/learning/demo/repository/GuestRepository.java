@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GuestRepository extends CrudRepository<Guest, Integer> {
+
+    public Guest findGuestByPhoneNumber(String phone);
 }

@@ -12,5 +12,6 @@ public interface GuestService {
     public Guest findById(int id) throws ChangeSetPersister.NotFoundException;
     public Guest updateGuest(Guest guest);
     public Iterable<Guest> getAllGuests();
+    public Guest findByPhone(String phone);
 
 }

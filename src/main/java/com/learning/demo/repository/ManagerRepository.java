@@ -19,7 +19,7 @@ public interface ManagerRepository extends CrudRepository<Manager, Integer> {
     /**
      * This is example of
      * jpql query which can
-     * be used for serach managers by
+     * be used for search managers by
      * name
      * @param name
      * @return
