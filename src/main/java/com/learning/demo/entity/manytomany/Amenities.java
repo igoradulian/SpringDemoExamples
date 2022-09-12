@@ -1,9 +1,6 @@
 package com.learning.demo.entity.manytomany;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -23,6 +20,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @Entity
+@ToString
 public class Amenities {
 
     @Id
