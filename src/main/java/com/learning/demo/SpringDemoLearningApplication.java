@@ -15,6 +15,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Arrays;
 
+/**
+ * @author Igor Adulyan
+ *
+ * CommandlineRunner initlize
+ * user roles and admin user
+ * on application start up
+ *
+ * User can add just regular users
+ *
+ * 1) urls available
+ * "localhost:8080/login"
+ * "localhost:8080/sign-up"
+ * "localhost:8080/home"
+ */
+
 @SpringBootApplication
 public class SpringDemoLearningApplication implements CommandLineRunner {
 
