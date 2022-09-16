@@ -11,10 +11,10 @@
     
     The project is divided into the following branches:
     
-    1) Spring MVC and Timeleaf
-    2) Spring Date and Spring MVC
-    3) Spring Security
-    4) Spring Microservices
+    1) Spring Boot MVC and Timeleaf
+    2) Spring Boot Data and Spring MVC
+    3) Spring Boot Security
+    4) Spring Boot File Upload
     
     To move from one topic to another, the user needs to switch to the
     branch of interest to him / her
