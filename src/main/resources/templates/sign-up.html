@@ -1,10 +1,68 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+        form{
+            display: flow;
+            margin: 200px;
+        }
+    </style>
 </head>
 <body>
+<h2>Sign Up Form</h2>
+<form action="#" th:action="@{/signup-process}"  th:object="${userDto}"  id="userForm" method="post" enctype="utf8">
+
+    <div class="form-group">
+    <input type="text" th:field="*{firstName}" placeholder= "First Name"/>
+    <span th:if="${#fields.hasErrors('firstName')}"
+          th:errors="*{firstName}"></span><br/>
+    </div>
+    <div class="form-group">
+    <input type="text" th:field="*{lastName}" placeholder = "Last Name"/>
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="*{lastName}"></span><br/>
+    </div>
+    <div class="form-group">
+    <input type="text" th:field="*{email}" placeholder="Email"/>
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}"></span><br/>
+    </div>
+
+    <div class="form-group">
+    <input type="text" th:field ="*{phone}" placeholder="Phone Number"/>
+    <span th:if="${#fields.hasErrors('phone')}"
+          th:errors="*{phone}"></span><br/>
+    </div>
+
+    <div class="form-group">
+    <input type="text" th:field="*{zip}" placeholder="zip"/>
+    <span th:if="${#fields.hasErrors('zip')}"
+          th:errors="*{zip}"></span><br/>
+    </div>
+    <div class="form-group">
+    <input type="text" th:field="*{userName}" placeholder="User Name"/>
+    <span th:if="${#fields.hasErrors('userName')}"
+          th:errors="*{userName}"></span><br/>
+    </div>
+
+    <div class="form-group">
+    <input type="password" th:field="*{password}" placeholder="Password"/>
+    <span th:if="${#fields.hasErrors('password')}"
+          th:errors="*{password}"></span><br/>
+    </div>
+    <div class="form-group">
+    <input type="password" th:field="*{matchingPassword}" placeholder="Repeat Password"/>
+    <span th:if="${#fields.hasErrors('matchingPassword')}"
+          th:errors="*{matchingPassword}"></span><br/>
+    </div>
+    <input id="submitButton" class="btn btn-primary" type="submit" value="Submit" name="submitButton"/>
+</form>
 
 </body>
 </html>

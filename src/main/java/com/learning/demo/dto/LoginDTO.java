@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
@@ -14,9 +15,9 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 public class LoginDTO {
 
-    @NotEmpty
+    @Email
     private String login;
 
-    @Min(8)
+    @NotEmpty
     private String password;
 }
