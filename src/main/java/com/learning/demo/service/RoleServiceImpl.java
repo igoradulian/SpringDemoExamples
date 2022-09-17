@@ -8,6 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Igor Adulyan
+ */
 @Service
 public class RoleServiceImpl implements RoleService{
 

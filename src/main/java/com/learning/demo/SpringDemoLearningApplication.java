@@ -1,17 +1,13 @@
 package com.learning.demo;
 
-import com.learning.demo.dto.UserDTO;
 import com.learning.demo.entity.Role;
 import com.learning.demo.entity.User;
-import com.learning.demo.repository.RoleRepository;
 import com.learning.demo.repository.UserRepository;
 import com.learning.demo.service.RoleService;
-import com.learning.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Arrays;
 

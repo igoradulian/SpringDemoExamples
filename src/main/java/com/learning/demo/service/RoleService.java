@@ -4,6 +4,9 @@ import com.learning.demo.entity.Role;
 
 import java.util.List;
 
+/**
+ * @author Igor Adulyan
+ */
 public interface RoleService {
 
     public void saveRole(Role role);

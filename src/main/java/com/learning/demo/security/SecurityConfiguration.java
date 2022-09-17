@@ -1,6 +1,6 @@
 package com.learning.demo.security;
 
-import com.learning.demo.service.UserService;
+import com.learning.demo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,12 +12,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+/**
+ * @author Igor Adulyan
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserService userDetailsService;
+    private UserServiceImpl userDetailsService;
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {

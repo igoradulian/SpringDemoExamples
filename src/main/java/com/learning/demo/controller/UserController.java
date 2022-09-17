@@ -1,14 +1,11 @@
 package com.learning.demo.controller;
 
-import com.learning.demo.dto.LoginDTO;
 import com.learning.demo.dto.UserDTO;
-import com.learning.demo.entity.User;
-import com.learning.demo.service.UserService;
+import com.learning.demo.service.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -30,10 +27,10 @@ public class UserController {
     }
 
 
-    private UserService userDetailsService;
+    private UserServiceImpl userDetailsService;
 
     @Autowired
-    public UserController(UserService userDetailsService) {
+    public UserController(UserServiceImpl userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
@@ -77,7 +74,7 @@ public class UserController {
     @RequestMapping("/login")
     public String getLoginPage()
     {
-        log.error("Login failed");
+        log.info("Login success");
         return "login";
     }
 

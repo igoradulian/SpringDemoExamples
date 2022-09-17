@@ -1,5 +1,8 @@
 package com.learning.demo.dto;
 
+/**
+ * @author Igor Adulyan
+ */
 import com.learning.demo.validation.FieldMatch;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

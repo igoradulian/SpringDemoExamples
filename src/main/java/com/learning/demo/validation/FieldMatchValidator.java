@@ -5,6 +5,9 @@ import org.springframework.beans.BeanWrapperImpl;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * @author Igor Adulyan
+ */
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 	
 	private String firstFieldName;

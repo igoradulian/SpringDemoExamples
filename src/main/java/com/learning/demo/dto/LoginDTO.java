@@ -1,5 +1,8 @@
 package com.learning.demo.dto;
 
+/**
+ * @author Igor Adulyan
+ */
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
