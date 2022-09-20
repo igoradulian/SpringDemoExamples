@@ -3,13 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>File Upload</title>
+    <style type="text/css">
+        form{
+            margin: 200px;
+        }
+    </style>
 </head>
 <body>
     <form action="#" th:action="@{/upload-process}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <p> <label>File Upload Form</label></p>
         <input type="file" name="file" accept=".pdf"/>
+        </div>
         <br>
-        <input type="submit" value="Submit" name="submitButton" />
+        <br>
+        <input type="submit" class="btn btn-primary" value="Submit" name="submitButton" />
     </form>
 
 </body>
