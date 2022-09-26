@@ -2,7 +2,6 @@ package com.learning.demo.repository;
 
 import com.learning.demo.entity.manytomany.Package;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
