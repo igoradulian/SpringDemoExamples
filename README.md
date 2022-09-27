@@ -19,14 +19,16 @@ The project is divided into the following branches:
 To move from one topic to another, the user needs to switch to the
 branch of interest to him / her
 
-#Installation:
+#Installation
 
 1) For a successful installation of the project, it recommended cloning
    the project using the clone button.
 2) Next use "git clone <link>" in your terminal to clone project in
    desired directory
 
-1.	Spring-MVC-Thymeleaf branch is example of how use Spring Boot Thymeleaf engine to create dynamic html pages. However, from this example you also can learn about such annotations like @Controller, @PostMapping, @GetMapping, @Valid and @ModelAttibute. This example also show how to use Lombok annotations
+#Usage
+
+1.Spring-MVC-Thymeleaf branch is example of how use Spring Boot Thymeleaf engine to create dynamic html pages. However, from this example you also can learn about such annotations like @Controller, @PostMapping, @GetMapping, @Valid and @ModelAttibute. This example also show how to use Lombok annotations
 a.	Before download be sure you have Java8/11 JDK installed. It is recommended to use IntelliJ IDE to run this project.
 
 Spring Boot MVC and Thymeleaf project demonstrates how Java class or variable can be mapped to html. Run project and use such Browse as Chrome to navigate to available pages:
@@ -84,7 +86,7 @@ SpringDemoLearningApplication.java. In SpringDemoLearningApplication.java also i
 
 Special attention should in this application is given to Thymeleafe Security Extras. Thymeleafe help developer customize paged based on user roles and provide information about logged in user. 
 
-How to use application:
+#How to use application:
 	
 1.	You can start application and try login with admin user without creating other users. 
 2.	To see difference in home page content for different user you need to create regular user account. Navigate in browser to http://localhost:8080/sign-up and fill put form. Note: it is important to pay attention to data validation process. In this example specific customized password validation annotation used. It is recommended to dive into this code and understand how it works. Application doesn’t provide password complexity functionality but you can create it by yourself.
