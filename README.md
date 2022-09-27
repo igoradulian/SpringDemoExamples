@@ -59,14 +59,13 @@ Spring Data example utilize following concepts as an example:
 
 
 This demo uses both Rest HATEAOS and Rest controller concepts, so you can understand difference between them. 
-
 Use this link to get access to public postman json. Once you import link you can start testing available endpoints:
 
 	https://www.getpostman.com/collections/5383078e5c04e0625e1b
 
 Note: to get all available endpoints for HATEAOS just call 
 
-http://localhost:8080 
+	http://localhost:8080 
 
 If you interested to learn about testing for Rest you can examine src/test/java directory
 
