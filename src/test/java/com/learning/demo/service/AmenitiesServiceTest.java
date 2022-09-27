@@ -56,7 +56,7 @@ public class AmenitiesServiceTest {
 
     @Test
     @Order(2)
-    public void find_packages_by_amenities_ids()
+    public void find_packages_by_amenities_ids_test()
     {
         Amenities amenities = amenitiesRepository.findAmenitiesByAmenitiesCode("CMA1233");
         List<Integer> packageIDsList = packageRepository.getPackagesByAmenitiesId(amenities.getId());
