@@ -74,7 +74,7 @@ public class UserController {
     @RequestMapping("/login")
     public String getLoginPage()
     {
-        log.info("Login success");
+        log.info("Login page displayed");
         return "login";
     }
 
@@ -82,6 +82,7 @@ public class UserController {
     @RequestMapping("/home")
     public String getHome()
     {
+        log.info("home page displayed");
         return "home";
 
     }
