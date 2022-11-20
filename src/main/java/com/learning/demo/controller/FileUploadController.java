@@ -26,7 +26,7 @@ import java.util.UUID;
 @Slf4j
 public class FileUploadController {
 
-    private final String UPLOAD_DIR = "src/main/resources/uploaded_files";
+    private final String UPLOAD_DIR = "src/main/resources/";
 
     @Autowired
     UploadService uploadService;
