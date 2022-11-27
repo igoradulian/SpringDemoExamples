@@ -50,7 +50,7 @@ public class SecurityConfiguration {
                  */
                 .antMatchers("/home").hasAnyRole("ROLE_USER","ROLE_ADMIN")
                 .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").permitAll()
+                .and().formLogin().loginPage("/login")
                 .loginProcessingUrl("/home")
                 .successForwardUrl("/home")
                 .and()
