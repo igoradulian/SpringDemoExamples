@@ -5,8 +5,12 @@ import com.learning.demo.repository.GuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 @Service
 public class GuestServiceImpl implements GuestService{
@@ -47,5 +51,13 @@ public class GuestServiceImpl implements GuestService{
         Guest guest = guestRepository.findGuestByPhoneNumber(phone).orElseThrow(RuntimeException::new);
         Predicate <Guest> isEmpty = g -> (g.getRoom() != 0);
         return isEmpty.test(guest);
+    }
+
+    @Override
+    public Collection<Guest> getAllGuestInHotel() {
+        List<Guest> guests = guestRepository.findAll();
+        Supplier<List<Guest>>  guestSupplier = () -> guests;
+
+        return guestSupplier.get();
     }
 }

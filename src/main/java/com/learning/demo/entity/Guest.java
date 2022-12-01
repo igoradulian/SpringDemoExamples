@@ -54,4 +54,8 @@ public class Guest {
     @Column(name = "room")
     private int room;
 
+    @NonNull
+    @Column(name = "type")
+    private String guestType;
+
 }

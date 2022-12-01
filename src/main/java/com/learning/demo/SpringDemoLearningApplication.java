@@ -36,11 +36,13 @@ public class SpringDemoLearningApplication implements CommandLineRunner {
 
     private void initGuests()
     {
-        guestService.createGuest(new Guest("John", "Doe", "897-987-1234", 12));
-        guestService.createGuest(new Guest("Jack", "Black", "897-987-4567", 1));
-        guestService.createGuest(new Guest("James", "Smith", "897-987-0987", 7));
-        guestService.createGuest(new Guest("Dana", "White", "897-987-3445", 2));
-        guestService.createGuest(new Guest("Ana", "Smith", "897-987-4675", 0));
+        guestService.createGuest(new Guest("John", "Doe", "897-987-1234", 12, "vip"));
+        guestService.createGuest(new Guest("Jack", "Black", "897-987-4567", 1, "standard"));
+        guestService.createGuest(new Guest("James", "Smith", "897-987-0987", 7, "vip"));
+        guestService.createGuest(new Guest("Dana", "White", "897-987-3445", 2,
+                "standard"));
+        guestService.createGuest(new Guest("Ana", "Smith", "897-987-4675", 0,
+                "standard"));
 
     }
 

@@ -2,6 +2,7 @@ package com.learning.demo.service;
 
 import com.learning.demo.entity.Guest;
 
+import java.util.Collection;
 import java.util.function.Function;
 
 public interface GuestService {
@@ -11,4 +12,6 @@ public interface GuestService {
     public boolean checkIfGuestHasARoom(String phone);
 
     public void createGuest(Guest guest);
+
+    public Collection<Guest> getAllGuestInHotel();
 }
