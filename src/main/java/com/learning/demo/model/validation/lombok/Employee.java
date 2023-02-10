@@ -30,8 +30,7 @@ public class Employee implements Serializable {
     @Email
     private String email;
 
-    @Min(8)
-    @Max(20)
+    @Size(min = 8,max = 20, message = "username should not be less then 8 and more then 20 characters")
     private String username;
 
     /**
@@ -39,8 +38,8 @@ public class Employee implements Serializable {
      * complexity restriction use regex or
      * create custom annotation
      */
-    @Min(8)
-    //@Pattern(regexp = "\^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}", message = "Wrong Password Format")
+    @Size(min = 8, message = "password should not be less then 8 characters")
+   // @Pattern(regexp = "\^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}", message = "Wrong Password Format")
     private String password;
 
 }
