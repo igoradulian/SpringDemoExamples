@@ -4,12 +4,14 @@ package com.learning.demo.dto;
  * @author Igor Adulyan
  */
 import com.learning.demo.validation.FieldMatch;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.validation.constraints.*;
 
 @Getter
 @Setter

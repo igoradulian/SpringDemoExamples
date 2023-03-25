@@ -2,6 +2,7 @@ package com.learning.demo.controller;
 
 import com.learning.demo.dto.UserDTO;
 import com.learning.demo.service.UserServiceImpl;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -11,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 /**
  * @author Igor Adulyan
@@ -71,7 +71,7 @@ public class UserController {
      * jpa functionality
      * @return
      */
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String getLoginPage()
     {
         log.info("Login page displayed");
@@ -84,7 +84,6 @@ public class UserController {
     {
         log.info("home page displayed");
         return "home";
-
     }
 
 }

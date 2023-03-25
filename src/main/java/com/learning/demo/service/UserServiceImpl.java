@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -46,14 +47,18 @@ import java.util.stream.Collectors;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
     private RoleService roleService;
 
-    @Autowired
     private BCryptPasswordEncoder encoder;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository, RoleService roleService,  @Lazy BCryptPasswordEncoder encoder) {
+        this.userRepository = userRepository;
+        this.roleService = roleService;
+        this.encoder = encoder;
+    }
 
     @Override
     @Transactional
@@ -67,11 +72,15 @@ public class UserServiceImpl implements UserService {
         }
        /* return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
                 mapRolesToAuthorities(user.getRoles()));*/
+
         return new UserPrincipal(user, roleService.getRolesByUser(user.getId()));
     }
 
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        Collection<? extends GrantedAuthority> mapRoles = roles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .collect(Collectors.toList());
+        return mapRoles;
     }
 
 
