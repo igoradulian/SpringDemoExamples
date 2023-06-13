@@ -1,7 +1,9 @@
 package com.learning.demo.validation;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+import jakarta.persistence.*;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
 import java.lang.annotation.*;
 
 /**

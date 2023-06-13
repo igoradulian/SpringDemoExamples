@@ -8,12 +8,24 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
 /**
  * @author Igor Adulyan
+ * @implNote
+ * SecurityConfiguration class
+ * completely refactored
+ * IMPORTANT:
+ * if you are going to use for specific
+ * endpoint more than one user role
+ * always use hasAnyRole(...)
+ * In order to be
+ * customizable always with Thymeleaf successForwardUrl(...)
+ * method
+ *
  */
 @Configuration
+@EnableWebSecurity
 public class SecurityConfiguration {
 
     @Autowired
@@ -38,24 +50,27 @@ public class SecurityConfiguration {
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/", "/login*", "/css/*", "/js/*", "/sign-up", "/signup-process").permitAll()
-                /*
-                It is also possible to use wild cards like
-                .antMatchers("/**").permitAll()
-                 */
-                .antMatchers("/home").hasAnyRole("ROLE_USER","ROLE_ADMIN")
-                .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login")
-                .loginProcessingUrl("/home")
-                .successForwardUrl("/home")
-                .and()
-                .logout().invalidateHttpSession(true)
-                .clearAuthentication(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").permitAll();
+                .authorizeHttpRequests(
+                        (auth) -> auth
+                                .requestMatchers("/", "/login*",
+                                        "/css/*", "/js/*", "/sign-up", "/signup-process").permitAll()
+                                .requestMatchers("/home").hasAnyRole("USER", "ADMIN")
+                                .anyRequest().authenticated()
+                                )
 
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login") // should point to login page
+                        .successForwardUrl("/home") // must be in order thymeleaf security extras work
+                        .permitAll()
+                )
+                .logout(
+                        logout -> logout
+                                .invalidateHttpSession(true)
+                                .clearAuthentication(true)
+                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                                .permitAll()
+                );
                 return http.build();
 
     }
