@@ -18,7 +18,7 @@ public class ManagerServiceTest {
     ManagerService managerService;
 
     @Test
-    public void getAllManagersTest()
+    public void testGetAllManagers()
     {
         List<Manager> managerList = (List<Manager>) managerService.getAllManagers();
         long totalManagers = managerService.countManagers();
@@ -30,7 +30,7 @@ public class ManagerServiceTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Sam", "George", "Ana"})
-    public void find_managers_by_name_test(String name)
+    public void test_find_managers_by_name(String name)
     {
         List<Manager> managerList = (List<Manager>) managerService.searchManagersByName(name);
 

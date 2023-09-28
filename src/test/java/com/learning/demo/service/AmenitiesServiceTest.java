@@ -31,7 +31,7 @@ public class AmenitiesServiceTest {
 
     @Test
     @Order(1)
-    public void creat_amenities_test()
+    public void test_creat_amenities()
     {
         Amenities amenities = new Amenities();
         amenities.setAmenitiesCode("CMA1233");
@@ -56,7 +56,7 @@ public class AmenitiesServiceTest {
 
     @Test
     @Order(2)
-    public void find_packages_by_amenities_ids_test()
+    public void test_find_packages_by_amenities_ids()
     {
         Amenities amenities = amenitiesRepository.findAmenitiesByAmenitiesCode("CMA1233");
         List<Integer> packageIDsList = packageRepository.getPackagesByAmenitiesId(amenities.getId());

@@ -25,7 +25,7 @@ public class GuestsServiceTest {
     GuestService guestService;
 
     @Test
-    public void getAllGuestsTest()
+    public void testGetAllGuests()
     {
         List<Guest> guestsList = (List<Guest>) guestService.getAllGuests();
         long totalGuests = guestService.numberOfGuests();
@@ -43,7 +43,7 @@ public class GuestsServiceTest {
      * @throws ChangeSetPersister.NotFoundException
      */
     @Test
-    public void getGuestsById() throws ChangeSetPersister.NotFoundException {
+    public void testGetGuestsById() throws ChangeSetPersister.NotFoundException {
 
         ArrayList<Guest> guests = (ArrayList<Guest>) guestService.getAllGuests();
         //Linked List gives more flexibility and help avoid hardcoding
