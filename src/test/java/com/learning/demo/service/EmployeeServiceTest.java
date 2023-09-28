@@ -28,7 +28,7 @@ public class EmployeeServiceTest {
      *
      */
     @Test
-    public void save_employee_test()
+    public void test_save_employee()
     {
         Employee employee = new Employee("Jo", "Doe", "jo@mail.com");
         employeeService.addEmployee(employee);
@@ -43,7 +43,7 @@ public class EmployeeServiceTest {
      * equal actual data
      */
     @Test
-    public void get_employee_test()
+    public void test_get_employee()
     {
         Employee expectedEmployee = new Employee("Jane", "Smith", "jany@mail.com");
         employeeService.addEmployee(expectedEmployee);
