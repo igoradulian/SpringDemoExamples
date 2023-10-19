@@ -75,7 +75,7 @@ public class UserController {
     public String getLoginPage()
     {
         log.info("Login page displayed");
-        return "login";
+        return "redirect:/home";
     }
 
 
