@@ -1,8 +1,8 @@
 package com.learning.demo.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 
 /**
  * This is example of
@@ -15,7 +15,7 @@ import javax.persistence.*;
  * Otherwise JPA use name of the class members
  * for columns and class name for table.
  */
-@Entity
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -31,6 +31,7 @@ be annotated as  @NonNull
  */
 @RequiredArgsConstructor
 @ToString
+@Entity
 @Table(name = "guests")//Optional
 public class Guest {
 

@@ -3,9 +3,10 @@ package com.learning.demo.entity.onetomany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.learning.demo.entity.manytoone.VipGuestFeedBack;
 import com.learning.demo.entity.onetoone.VipRoom;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;

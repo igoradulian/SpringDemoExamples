@@ -1,8 +1,8 @@
 package com.learning.demo.entity;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 
 /**
  * This entity class
