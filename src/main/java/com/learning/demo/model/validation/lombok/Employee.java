@@ -1,8 +1,10 @@
 package com.learning.demo.model.validation.lombok;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 

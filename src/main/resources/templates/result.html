@@ -17,7 +17,8 @@
         <p th:text="${employee.getLastName()}"></p>
     <br>
         <label>Email</label>
-        <p th:text="${employee.getEmail()}"></p>
+    <p th:text="${#strings.equalsIgnoreCase(employee.email ,null)} ? 'NA'
+            : ${employee.email}"></p>
 </div>
 <br>
 <br>
