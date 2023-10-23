@@ -1,6 +1,6 @@
 # Spring Demo Examples
 
-![alt text](https://pixabay.com/vectors/tea-cup-gray-coffee-aroma-java-311845/)
+<img src="[relative/path/in/repository/to/image.svg](https://pixabay.com/vectors/tea-cup-gray-coffee-aroma-java-311845/)" width="128" hight="100"/>
   
 This is Spring Boot master branch wich contian
     blank project for cloning and set up.
