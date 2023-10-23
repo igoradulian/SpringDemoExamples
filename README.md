@@ -1,5 +1,8 @@
 # Spring Demo Examples
-  This is Spring Boot master branch wich contian
+
+![alt text](https://pixabay.com/vectors/tea-cup-gray-coffee-aroma-java-311845/)
+  
+This is Spring Boot master branch wich contian
     blank project for cloning and set up.
     Project created as a guide and demo for learning purposes.
     
