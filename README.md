@@ -1,4 +1,4 @@
-# Spring Demo Examples			![GitHub Image](/spring-logo.png)
+# Spring Demo Examples			![GitHub Image](/spring.png)
 
 This is Spring Boot master branch wich contian
     blank project for cloning and set up.
