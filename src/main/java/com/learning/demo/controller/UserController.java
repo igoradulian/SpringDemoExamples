@@ -79,7 +79,7 @@ public class UserController {
     }
 
 
-    @RequestMapping("/home")
+    @GetMapping("/home")
     public String getHome()
     {
         log.info("home page displayed");

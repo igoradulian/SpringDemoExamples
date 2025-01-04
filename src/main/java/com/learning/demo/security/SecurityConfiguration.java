@@ -61,17 +61,17 @@ public class SecurityConfiguration {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login") // should point to login page
-                        .successForwardUrl("/home") // must be in order thymeleaf security extras work
-                        .permitAll()
+                        .defaultSuccessUrl("/home") // must be in order thymeleaf security extras work
+                        .failureUrl("/login?error=true")
                 )
                 .logout(
                         logout -> logout
+                                .logoutSuccessUrl("/login?logout=true")
                                 .invalidateHttpSession(true)
                                 .clearAuthentication(true)
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                                 .permitAll()
-                );
+                                .deleteCookies("JSESSIONID"));
                 return http.build();
-
     }
 }
