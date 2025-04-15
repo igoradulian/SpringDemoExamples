@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.*;
  * @author Igor Adulyan
  */
 @RestController
+@RequestMapping(value = AmenitiesController.ApiRoutes.AMENITIES)
 public class AmenitiesController {
 
+    public static class ApiRoutes {
+        public static final String AMENITIES = "/api/v1/amenities";
+    }
 
     private AmenitiesService amenitiesService;
 
@@ -22,14 +26,14 @@ public class AmenitiesController {
         this.amenitiesService = amenitiesService;
     }
 
-    @PostMapping("/addAmenities")
+    @PostMapping
     public ResponseEntity<?> addAmenities(@RequestBody AmenitiesDTO amenitiesDTO)
     {
         amenitiesService.createAmenities(amenitiesDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body("Amenities Created");
     }
 
-    @GetMapping("/getAmenities/{code}")
+    @GetMapping("/{code}")
     public ResponseEntity<?> getAmenities(@PathVariable String code)
     {
        AmenitiesDTO amenitiesDTO = amenitiesService.getAmenities(code);

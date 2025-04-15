@@ -22,7 +22,12 @@ import org.springframework.web.bind.annotation.*;
  * @author Igor Adulyan
  */
 @RestController
+@RequestMapping(VIPGuestController.ApiRoutes.VIP_GUESTS)
 public class VIPGuestController {
+
+    public static class ApiRoutes {
+        public static final String VIP_GUESTS = "/api/v1/vipGuests";
+    }
 
     private VipGuestService vipGuestService;
 
@@ -31,14 +36,14 @@ public class VIPGuestController {
         this.vipGuestService = vipGuestService;
     }
 
-    @PostMapping("/addVipGuest")
+    @PostMapping
     public ResponseEntity<?> createVipGuest(@RequestBody VipGuestDTO vipGuestDTO)
     {
         vipGuestService.createVipGuest(vipGuestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body("Vip Guest Created");
     }
 
-    @GetMapping("/getVipGuest")
+    @GetMapping
     public ResponseEntity<?> getVipGuest(@RequestParam(name = "phoneNumber") String phoneNumber)
     {
         VipGuestDTO vipGuestDTO = vipGuestService.getVipGuest(phoneNumber);

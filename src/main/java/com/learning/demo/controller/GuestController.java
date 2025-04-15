@@ -30,7 +30,12 @@ import javax.swing.text.html.parser.Entity;
  * you will use a lot in industry
  */
 @RestController
+@RequestMapping(GuestController.ApiRoutes.GUESTS)
 public class GuestController {
+
+    public static class ApiRoutes {
+        public static final String GUESTS = "/api/v1/guests";
+    }
 
 
     private GuestService guestService;
@@ -40,7 +45,7 @@ public class GuestController {
         this.guestService = guestService;
     }
 
-    @PostMapping("/addGuest")
+    @PostMapping
     public ResponseEntity<?> createGuest(@RequestBody GuestDTO guestDTO)
     {
         ModelMapper modelMapper = new ModelMapper();
@@ -72,7 +77,7 @@ public class GuestController {
      * @return
      * @throws ChangeSetPersister.NotFoundException
      */
-    @GetMapping("/guest/{id}")
+    @GetMapping("/{id}")
     public Guest getGuestById(@PathVariable String id) throws ChangeSetPersister.NotFoundException {
         return guestService.findById(Integer.parseInt(id));
     }
@@ -84,7 +89,7 @@ public class GuestController {
      * @param guestDTO
      * @return
      */
-    @PutMapping("/updateGuest")
+    @PutMapping
             public Guest updateGuest(@RequestParam(name = "id") String id,
                                      @RequestBody GuestDTO guestDTO) throws ChangeSetPersister.NotFoundException {
         ModelMapper modelMapper = new ModelMapper();
