@@ -1,47 +1,51 @@
-# Spring Demo Examples			![GitHub Image](/spring.png)
+# Spring Demo Examples ![GitHub Image](/spring.png)
 
-This is Spring Boot master branch wich contian
-    blank project for cloning and set up.
-    Project created as a guide and demo for learning purposes.
-    
-    #Who can use it?
-These examples are useful both for beginners with no previous experience
-with Spring and for individuals who good knowlgde of Spring Boot.
-However, Java programing basic knowldge needed.
-Instructors may use these examples for teaching purposes.
+This repository contains a collection of small Spring Boot examples.
+The `master` branch holds a minimal project that you can clone and use as a starting point. Each additional feature is demonstrated in a separate branch so you can explore topics individually.
 
-The project is divided into the following branches:
+## Who can use it?
 
-1) Spring Boot MVC and Thymeleaf
-2) Spring Boot Data and Spring MVC
-3) Spring Boot Security
-4) Spring Boot File Upload
+* **Beginners** – learn the basics of Spring Boot in a compact project.
+* **Experienced users** – grab a template for your own experiments.
+* **Instructors** – reuse these samples for teaching purposes.
 
-To move from one topic to another, the user needs to switch to the
-branch of interest to him / her
+Basic Java knowledge is required for all branches.
 
-#Installation
 
-1) For a successful installation of the project, it recommended cloning
-   the project using the clone button.
-2) Next use "git clone <link>" in your terminal to clone project in
-   desired directory
+## Branches
 
-#Usage
+This repository includes examples for:
 
-1.Spring-MVC-Thymeleaf branch is example of how use Spring Boot Thymeleaf engine to create dynamic html pages. However, from this example you also can learn about such annotations like @Controller, @PostMapping, @GetMapping, @Valid and @ModelAttibute. This example also show how to use Lombok annotations
+1. Spring Boot MVC with Thymeleaf
+2. Spring Data JPA and MVC
+3. Spring Security
+4. File upload
 
-a.Before download be sure you have Java8/11 JDK installed. It is recommended to use IntelliJ IDE to run this project.
+Check out the branch that interests you to see the code.
 
-Spring Boot MVC and Thymeleaf project demonstrates how Java class or variable can be mapped to html. Run project and use such Browse as Chrome to navigate to available pages:
+## Installation
 
-1. http://localhost:8080/ - basic example of how pass Sting to html template
+Clone the repository using Git:
+
+```bash
+git clone <repository-url>
+```
+
+## Usage
+
+1. **Spring-MVC-Thymeleaf** demonstrates how to use the Thymeleaf template engine to create dynamic html pages. It also introduces annotations such as @Controller, @PostMapping, @GetMapping, @Valid and @ModelAttribute. This example also shows how to use Lombok annotations
+
+Before running the project make sure Java 8 or 11 is installed. It is recommended to use IntelliJ IDE to run this project.
+
+Spring Boot MVC and Thymeleaf project demonstrates how Java class or variable can be mapped to html. Run the project and use a browser such as Chrome to navigate to available pages:
+
+1. http://localhost:8080/ - basic example of how to pass a string to an HTML template
 2. http://localhost:8080/employee - pass class data to template
 3. http://localhost:8080/add-employee - example of how to use html form to add new entity
 4. http://localhost:8080/all-employees - show all added employees as a list. 
 5. http://localhost:8080/validation/process-employee - example show how to use validation in html form with Thymeleaf
 
-Example 4 and 5 are extremely important to understand. It is recommended to go over code couple of times. Code also has comments for important points.
+Examples 4 and 5 are particularly important. Review them several times. The code includes comments on key concepts.
 
 In addition, under src/test/java directory you can find basic JUnit tests. 
 
